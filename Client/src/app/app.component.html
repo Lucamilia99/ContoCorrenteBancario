@@ -1,0 +1,20 @@
+<input type="date" [(ngModel)] = "contoCorrente.data" placeholder="data" />&nbsp;
+<input type="text" [(ngModel)] = "contoCorrente.descrizione" placeholder="descrizione" />&nbsp;
+<input type="number" [(ngModel)] = "contoCorrente.importoEuro" placeholder="importo euro" />&nbsp;
+<input type="number" [(ngModel)] = "contoCorrente.importoDollari" placeholder="importo euro" placeholder="importo dollaro" />&nbsp;
+<button (click) = "aggiungi()">Aggiungi</button>
+<br /><br />
+<table *ngIf="contiCorrente.length > 0">
+  <tr>
+    <th>DATA</th>
+    <th>DESCRIZIONE</th>
+    <th>EURO</th>
+    <th>DOLLARI</th>
+  </tr>
+  <tr *ngFor="let c of contiCorrente">
+    <td>{{c.data}}</td>
+    <td>{{c.descrizione}}</td>
+    <td>{{c.euro}}</td>
+    <td>{{c.dollaro}}</td>
+  </tr>
+</table>
