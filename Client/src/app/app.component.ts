@@ -23,7 +23,9 @@ export class AppComponent {
     dto.contoCorrente = this.contoCorrente;
     this.http.post<ContoCorrenteDto>(this.url + "aggiungi", dto)
     .subscribe(f=>this.contoCorrente=f.contoCorrente)
-    
+  }
+
+  cancella() {
 
   }
 }
