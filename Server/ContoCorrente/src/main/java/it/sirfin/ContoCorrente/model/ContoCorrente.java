@@ -1,36 +1,44 @@
 package it.sirfin.ContoCorrente.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 //@Entity questa annotazione sarà presente solamente quando useremo un database e rappresenterò una tabella sul database 
 public class ContoCorrente {
-	// data : Date = undefined;
-	// descrizione = "";
-//	importoEuro = undefined;
-//	importoDollari = undefined;
-	private LocalDateTime data;
+	private int id;
+	private LocalDate data;
 	private String Descrizione;
 	private double importoEuro;
 	private double importoDollari;
 
-	
-	
 	public ContoCorrente() {
-		
+
 	}
 
-	public ContoCorrente(LocalDateTime data, String descrizione, double importoEuro, double importoDollari) {
+	public ContoCorrente(int id, LocalDate data, String descrizione, double importoEuro, double importoDollari) {
+		this.id = id;
 		this.data = data;
 		Descrizione = descrizione;
 		this.importoEuro = importoEuro;
 		this.importoDollari = importoDollari;
 	}
+	
+	
+	
 
-	public LocalDateTime getData() {
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(LocalDateTime data) {
-		this.data = data; 
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
 	public String getDescrizione() {
@@ -59,8 +67,10 @@ public class ContoCorrente {
 
 	@Override
 	public String toString() {
-		return "ContoCorrente [data=" + data + ", Descrizione=" + Descrizione + ", importoEuro=" + importoEuro
-				+ ", importoDollari=" + importoDollari + "]";
+		return "ContoCorrente [id=" + id + ", data=" + data + ", Descrizione=" + Descrizione + ", importoEuro="
+				+ importoEuro + ", importoDollari=" + importoDollari + "]";
 	}
+
+	
 
 }

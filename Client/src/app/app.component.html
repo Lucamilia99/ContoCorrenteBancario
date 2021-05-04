@@ -1,22 +1,34 @@
-<input type="date" [(ngModel)] = "contoCorrente.data" placeholder="data" />&nbsp;
-<input type="text" [(ngModel)] = "contoCorrente.descrizione" placeholder="descrizione" />&nbsp;
-<input type="number" [(ngModel)] = "contoCorrente.importoEuro" placeholder="importo euro" />&nbsp;
-<input type="number" [(ngModel)] = "contoCorrente.importoDollari" placeholder="importo euro" placeholder="importo dollaro" />&nbsp;
-<button (click) = "aggiungi()">Aggiungi</button>
+<h1>Conto Corrente Bancario</h1>
+<br><br>
+<label>id {{contoCorrente.id}} </label>&nbsp;
+<input type="date" [(ngModel)]="contoCorrente.data" placeholder="data" />&nbsp;
+<input type="text" [(ngModel)]="contoCorrente.descrizione" placeholder="descrizione" />&nbsp;
+<input type="number" [(ngModel)]="contoCorrente.importoEuro" placeholder="conversione in dollari" />&nbsp;
+<input type="number" [(ngModel)]="contoCorrente.importoDollari" placeholder="conversione in euro" />&nbsp;
+<button (click)="aggiungi()">Aggiungi</button>
 <br><br>
 <table *ngIf="contiCorrente.length > 0">
   <tr>
+    <th>id</th>
     <th>DATA</th>
     <th>DESCRIZIONE</th>
     <th>EURO</th>
     <th>DOLLARI</th>
   </tr>
   <tr *ngFor="let c of contiCorrente">
+    <td>{{c.id}}</td>
     <td>{{c.data}}</td>
     <td>{{c.descrizione}}</td>
+<<<<<<< Updated upstream
     <td>{{c.euro}}</td>
     <td>{{c.dollaro}}</td>
     <td><button (click) = "cancella()">cancella</button></td>
+=======
+    <td>{{c.importoEuro}} $</td>
+    <td>{{c.importoDollari}} &euro; </td>
+    <td><button (click)="elimina()">Elimina</button></td>
+>>>>>>> Stashed changes
   </tr>
 
 </table>
+
