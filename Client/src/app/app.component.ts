@@ -22,13 +22,6 @@ export class AppComponent {
   aggiungi() {
     let dto = new ContoCorrenteDto();
     dto.contoCorrente = this.contoCorrente;
-<<<<<<< Updated upstream
-    this.http.post<ContoCorrenteDto>(this.url + "aggiungi", dto)
-    .subscribe(f=>this.contoCorrente=f.contoCorrente)
-  }
-
-  cancella() {
-=======
     console.log(this.contoCorrente);
     this.http.post<ListaContoCorrenteDto>(this.url + "aggiungi", dto)
       .subscribe(f => {
@@ -37,7 +30,6 @@ export class AppComponent {
         for (let i = this.contoCorrente.id = 0; i <= this.contiCorrente.length; i++) {
           console.log(i);
         }
->>>>>>> Stashed changes
 
       });
   }
