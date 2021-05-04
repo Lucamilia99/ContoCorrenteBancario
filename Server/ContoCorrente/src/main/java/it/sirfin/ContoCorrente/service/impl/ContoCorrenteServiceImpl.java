@@ -1,6 +1,7 @@
 package it.sirfin.ContoCorrente.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -28,8 +29,17 @@ public class ContoCorrenteServiceImpl implements ContoCorrenteService {
 
 	@Override
 	public ListaContoCorrenteDto elimina(ContoCorrente cc) {
-		conto.remove(cc.getId());
-		return new ListaContoCorrenteDto(conto);
+		System.out.println("-------------------------");
+		System.out.println("CONTO ELIMINATO " + cc);
+		System.out.println("-----------------------");
+		this.conto.remove(cc);
+		ListaContoCorrenteDto list = new ListaContoCorrenteDto();
+		list.setContiCorrente(conto);
+		System.out.println("-------CONTOOOO-----------");
+		System.out.println(conto);
+		System.out.println("------------------");
+		System.out.println("------------------");
+		return list;
 	}
 
 }

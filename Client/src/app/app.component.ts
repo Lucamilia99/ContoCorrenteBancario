@@ -11,7 +11,6 @@ import { ListaContoCorrenteDto } from './lista-conto-correnti-dto';
 })
 export class AppComponent {
   constructor(private http: HttpClient) {
-
   }
   url = "http://localhost:8080/";
 
@@ -27,17 +26,23 @@ export class AppComponent {
       .subscribe(f => {
         this.contiCorrente = f.contiCorrente;
         this.contoCorrente = new ContoCorrente();
-        for (let i = this.contoCorrente.id = 0; i <= this.contiCorrente.length; i++) {
-          console.log(i);
-        }
-
+     
       });
   }
 
-  elimina() {
+
+
+  elimina(c: ContoCorrente) {
     let dto = new ContoCorrenteDto();
-    dto.contoCorrente = this.contoCorrente;
+    dto.contoCorrente = c;
+    console.log(this.contoCorrente);
     this.http.post<ListaContoCorrenteDto>(this.url + "elimina", dto)
-      .subscribe(r => this.contiCorrente = r.contiCorrente);
+      .subscribe(f => {
+        this.contiCorrente = f.contiCorrente;
+      });
+    //this.contiCorrente.splice(i, 1);
+    // // for (let i = 0; i < this.contiCorrente.length; i++) {
+    // //   this.contiCorrente[i].id = i;
+    // // }
   }
 }

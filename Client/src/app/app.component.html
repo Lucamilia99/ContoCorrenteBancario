@@ -1,6 +1,5 @@
 <h1>Conto Corrente Bancario</h1>
 <br><br>
-<label>id {{contoCorrente.id}} </label>&nbsp;
 <input type="date" [(ngModel)]="contoCorrente.data" placeholder="data" />&nbsp;
 <input type="text" [(ngModel)]="contoCorrente.descrizione" placeholder="descrizione" />&nbsp;
 <input type="number" [(ngModel)]="contoCorrente.importoEuro" placeholder="conversione in dollari" />&nbsp;
@@ -21,7 +20,7 @@
     <td>{{c.descrizione}}</td>
     <td>{{c.importoEuro}} $</td>
     <td>{{c.importoDollari}} &euro; </td>
-    <td><button (click)="elimina()">Elimina</button></td>
+    <td><button (click)="elimina(c)">Elimina</button></td>
   </tr>
 
 </table>
